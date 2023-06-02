@@ -1,0 +1,20 @@
+{
+	"compilerOptions": {
+		"target": "es2022",
+		"module": "es2022",
+		"moduleResolution": "node",
+		"declaration": true,
+		"declarationMap": true,
+		"sourceMap": true,
+		"inlineSources": true,
+		"resolveJsonModule": true,
+		"experimentalDecorators": true,
+		"allowSyntheticDefaultImports": true,
+		"useDefineForClassFields": false,
+		"rootDir": "src",
+		"outDir": ".",
+		"strict": true
+	},
+	"include": ["src/**/*"],
+	"exclude": []
+}
