@@ -15,6 +15,7 @@
 		"/index.js",
 		"/index.js.map",
 		"/index.d.ts",
-		"/index.d.ts.map"
+		"/index.d.ts.map",
+		"/bare"
 	]
 }
