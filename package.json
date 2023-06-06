@@ -17,5 +17,13 @@
 		"/index.d.ts",
 		"/index.d.ts.map",
 		"/bare"
-	]
+	],
+	"author": {
+		"name": "vdegenne",
+		"email": "vdegenne@gmail.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/vdegenne/custom-element-decorator"
+	}
 }

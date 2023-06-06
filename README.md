@@ -42,5 +42,5 @@ npm add -D define-custom-element-decorator
 
 ## Special thanks
 
-to [Glenn](https://github.com/VandeurenGlenn) for the hyphen idea.
+to [Glenn](https://github.com/VandeurenGlenn) for the hyphen idea.  
 to [Duske](https://github.com/Duske) for delegating this npm package name to me.
