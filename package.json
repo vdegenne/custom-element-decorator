@@ -1,5 +1,5 @@
 {
-	"name": "define-custom-element-decorator",
+	"name": "custom-element-decorator",
 	"description": "@customElement decorator",
 	"version": "0.0.9",
 	"main": "index.js",
