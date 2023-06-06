@@ -5,6 +5,16 @@
 	"main": "index.js",
 	"module": "index.js",
 	"type": "module",
+	"exports": {
+		".": {
+			"default": "./index.js",
+			"types": "./index.d.ts"
+		},
+		"./bare": {
+			"default": "./bare",
+			"types": "./bare/index.d.ts"
+		}
+	},
 	"scripts": {
 		"build": "tsc --pretty"
 	},

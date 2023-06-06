@@ -1,13 +1,14 @@
 export function customElement(ctor: CustomElementConstructor) {
-	const ce = class extends ctor {
-		constructor() {
-			super(...arguments);
-		}
-	};
-	globalThis.customElements.define(
-		ctor.name.replace(/([a-zA-Z])(?=[A-Z])/g, '$1-').toLowerCase(),
-		ce
-	);
+	let name = ctor.name.replace(/([a-zA-Z])(?=[A-Z])/g, '$1-').toLowerCase();
+	if (!name.includes('-')) {
+		name += '-element';
+	}
+	let i = -1;
+	do {
+		i++;
+	} while (!globalThis.customElements.get(`${name}${i !== 0 ? '-${i}' : ''}`));
 
-	return ce as any;
+	globalThis.customElements.define(`${name}${i !== 0 ? '-${i}' : ''}`, ctor);
+
+	return ctor as any;
 }

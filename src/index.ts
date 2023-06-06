@@ -1,4 +1,12 @@
-export function customElement({inject} = {inject: false}) {
+interface CustomElementDecoratorOptions {
+	name?: string;
+	inject?: boolean;
+}
+
+export function customElement({
+	inject = false,
+	name,
+}: CustomElementDecoratorOptions) {
 	return function (ctor: CustomElementConstructor) {
 		class CustomElement extends ctor {
 			constructor() {
