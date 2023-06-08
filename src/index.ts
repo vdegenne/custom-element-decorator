@@ -22,9 +22,7 @@ export function customElement({
 		let i = -1;
 		do {
 			i++;
-		} while (
-			!globalThis.customElements.get(`${name}${i !== 0 ? '-${i}' : ''}`)
-		);
+		} while (globalThis.customElements.get(`${name}${i !== 0 ? '-${i}' : ''}`));
 
 		globalThis.customElements.define(
 			`${name}${i !== 0 ? '-${i}' : ''}`,
