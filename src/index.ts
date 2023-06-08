@@ -9,6 +9,7 @@ export function customElement({
 }: CustomElementDecoratorOptions) {
 	return function (ctor: CustomElementConstructor) {
 		class CustomElement extends ctor {
+			static styles = ctor.elementStyles;
 			constructor() {
 				super(...arguments);
 				if (inject) document.body.prepend(this);
