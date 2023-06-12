@@ -36,9 +36,17 @@ export const service = new MyServiceElement();
 ## Installation
 
 ```
-npm add -D define-custom-element-decorator
+npm add -D custom-element-decorator
 ```
 
+## Bare version
+
+```typescript
+import {customElement} from 'custom-element-decorator/bare';
+
+@customElement
+class MyElement extends HTMLElement {}
+```
 
 ## Special thanks
 
