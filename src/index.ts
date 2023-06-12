@@ -1,35 +1,19 @@
+import { _customElement } from "./decorative.js";
+
 interface CustomElementDecoratorOptions {
-	name?: string;
+	/**
+	 * Should inject/prepend the element when programmatically
+	 * created?
+	 */
 	inject?: boolean;
+	name?: string;
 }
 
 export function customElement({
-	inject = false,
 	name,
-}: CustomElementDecoratorOptions) {
+	inject = false,
+}: CustomElementDecoratorOptions = {}) {
 	return function (ctor: CustomElementConstructor) {
-		class CustomElement extends ctor {
-			static styles = ctor.elementStyles;
-			constructor() {
-				super(...arguments);
-				if (inject) document.body.prepend(this);
-			}
-		}
-
-		let name = ctor.name.replace(/([a-zA-Z])(?=[A-Z])/g, '$1-').toLowerCase();
-		if (!name.includes('-')) {
-			name += '-element';
-		}
-		let i = -1;
-		do {
-			i++;
-		} while (globalThis.customElements.get(`${name}${i !== 0 ? '-${i}' : ''}`));
-
-		globalThis.customElements.define(
-			`${name}${i !== 0 ? '-${i}' : ''}`,
-			CustomElement
-		);
-
-		return CustomElement as any;
+		return _customElement(ctor, inject, name)
 	};
 }
